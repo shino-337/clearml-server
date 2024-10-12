@@ -10,7 +10,7 @@ RUN mv clearml-web /opt/open-webapp
 COPY --chmod=744 docker/build/internal_files/build_webapp.sh /tmp/internal_files/
 RUN /bin/bash -c '/tmp/internal_files/build_webapp.sh'
 
-FROM python:3.9-slim-bullseye
+FROM python:3.12.7-slim-bullseye
 COPY --chmod=744 docker/build/internal_files/entrypoint.sh /opt/clearml/
 COPY fileserver /opt/clearml/fileserver/
 COPY apiserver /opt/clearml/apiserver/
